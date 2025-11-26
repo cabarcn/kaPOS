@@ -180,9 +180,10 @@ SPECTACULAR_SETTINGS = {
     'TITLE': 'KApos API',
     'DESCRIPTION': 'Backend KApos (clientes, planes, suscripciones, eventos)',
     'VERSION': '1.0.0',
-    'SERVE_INCLUDE_SCHEMA': False,
+    'SERVE_AUTHENTICATED': False,
     'SERVE_PERMISSIONS': ['rest_framework.permissions.AllowAny'],
+    'SERVE_INCLUDE_SCHEMA': False,
     'SWAGGER_UI_SETTINGS': {
-        'persistAuthorization': True,  # mantiene tu token JWT activo
+        'persistAuthorization': True,
     },
 }
