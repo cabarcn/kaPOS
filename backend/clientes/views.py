@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from .models import Cliente
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
+from usuarios.permissions import IsSoporteOrReadOnly
 from .serializers import ClienteSerializer, ClienteCreateSerializer
 
 class ClienteViewSet(viewsets.ModelViewSet):
@@ -17,8 +18,8 @@ class ClienteViewSet(viewsets.ModelViewSet):
     destroy: Eliminar cliente
     """
     queryset = Cliente.objects.all().order_by('-id')
-    serielizer_class = ClienteSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = ClienteSerializer
+    permission_classes = [IsAuthenticated, IsSoporteOrReadOnly]
     
     # 👇 NUEVO: forzar respuesta con serializer de lectura (incluye id)
     def create(self, request, *args, **kwargs):
