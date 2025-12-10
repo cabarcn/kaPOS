@@ -44,3 +44,13 @@ class RegistroSerializer(serializers.ModelSerializer):
         usuario.save()
         
         return usuario
+    
+class backendUsuarioSerializer(serializers.ModelSerializer):
+    """
+    Serializer usado por las vistas del backend para exponer datos de Usuario.
+    Es equivalente a un UsuarioSerializer general.
+    """
+
+    class Meta:
+        model = Usuario
+        fields = "__all__"
