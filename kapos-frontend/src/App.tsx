@@ -1,36 +1,39 @@
+// src/App.tsx
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import LoginPage from "./pages/Login";
+import LoginPage from "./pages/login";
 import DashboardPage from "./pages/Dashboard";
 
-export default function App() {
-  const isLoggedIn = Boolean(localStorage.getItem("kapos_access"));
+function App() {
+  const token = localStorage.getItem("kapos_access");
 
   return (
     <BrowserRouter>
       <Routes>
+        {/* Login */}
         <Route path="/login" element={<LoginPage />} />
 
+        {/* Dashboard protegido (solo si hay token) */}
         <Route
           path="/dashboard"
-          element={isLoggedIn ? <DashboardPage /> : <Navigate to="/login" />}
+          element={
+            token ? <DashboardPage /> : <Navigate to="/login" replace />
+          }
         />
 
-        {/* Próximas rutas */}
+        {/* Redirección por defecto */}
         <Route
-          path="/clientes"
-          element={isLoggedIn ? <div>Clientes</div> : <Navigate to="/login" />}
+          path="*"
+          element={
+            token ? (
+              <Navigate to="/dashboard" replace />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
         />
-        <Route
-          path="/planes"
-          element={isLoggedIn ? <div>Planes</div> : <Navigate to="/login" />}
-        />
-        <Route
-          path="/suscripciones"
-          element={isLoggedIn ? <div>Suscripciones</div> : <Navigate to="/login" />}
-        />
-
-        <Route path="*" element={<Navigate to="/dashboard" />} />
       </Routes>
     </BrowserRouter>
   );
 }
+
+export default App;
