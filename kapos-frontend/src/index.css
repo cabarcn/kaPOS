@@ -3,9 +3,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Tema fijo oscuro, coherente con login + dashboard */
+  color: #e5e7eb;
+  background-color: #020617;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,28 +13,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Enlaces: estilo neutro, sin subrayado por defecto */
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: #cbd5f5;
+  text-decoration: none;
 }
 a:hover {
-  color: #535bf2;
+  color: #ffffff;
 }
 
+/* BODY: fondo oscuro a pantalla completa, sin centrar todo con flex */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #020617;
+  color: #e5e7eb;
+  display: block;
 }
 
+/* Títulos por defecto (no se usan mucho, pero los dejamos decentes) */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
+/* Botones genéricos (la mayoría los estamos estilando inline, pero esto sirve de base) */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -42,18 +47,23 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #1f2937;
+  color: #e5e7eb;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #60a5fa;
+  background-color: #111827;
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 3px solid #60a5fa;
 }
 
+/* Eliminamos el modo claro automático:
+   queremos tema fijo oscuro para que no cambie con las preferencias del sistema */
+/*
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -66,3 +76,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+*/
