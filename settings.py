@@ -40,10 +40,10 @@ INSTALLED_APPS = [
     'drf_spectacular_sidecar',
     
     # MIS APPS
-    'usuarios',
-    'clientes',
-    'planes',
-    'suscripciones',
+    'backend.usuarios',
+    'backend.clientes',
+    'backend.planes',
+    'backend.suscripciones',
     
 ]
 
