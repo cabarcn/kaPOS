@@ -79,7 +79,7 @@ class SuscripcionViewSet(viewsets.ModelViewSet):
         """
         Cambia el plan asociado a la suscripción, validando que el nuevo plan esté activo.
         """
-        from planes.models import Plan  # import local para evitar ciclos
+        from backend.planes.models import Plan  # import local para evitar ciclos
 
         suscripcion = self.get_object()
         nuevo_plan_id = request.data.get("plan")

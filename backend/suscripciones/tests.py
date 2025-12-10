@@ -1,8 +1,8 @@
 from rest_framework.test import APITestCase
 from django.utils import timezone
 from backend.usuarios.models import Usuario
-from clientes.models import Cliente
-from planes.models import Plan
+from backend.clientes.models import Cliente
+from backend.planes.models import Plan
 
 class SuscripcionesFlowTests(APITestCase):
     def setUp(self):
