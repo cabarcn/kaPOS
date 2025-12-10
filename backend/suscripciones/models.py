@@ -1,6 +1,6 @@
 from django.db import models
-from clientes.models import Cliente
-from planes.models import Plan
+from backend.clientes.models import Cliente
+from backend.planes.models import Plan
 from django.utils import timezone
 from django.conf import settings
 
