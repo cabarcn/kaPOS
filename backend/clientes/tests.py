@@ -1,5 +1,5 @@
 from rest_framework.test import APITestCase
-from usuarios.models import Usuario
+from backend.usuarios.models import Usuario
 
 class ClientesCrudTests(APITestCase):
     def setUp(self):

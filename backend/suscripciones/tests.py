@@ -1,6 +1,6 @@
 from rest_framework.test import APITestCase
 from django.utils import timezone
-from usuarios.models import Usuario
+from backend.usuarios.models import Usuario
 from clientes.models import Cliente
 from planes.models import Plan
 

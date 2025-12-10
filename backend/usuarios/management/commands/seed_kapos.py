@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand
 from django.utils import timezone
 from datetime import date, timedelta
 
-from usuarios.models import Usuario
+from backend.usuarios.models import Usuario
 from clientes.models import Cliente
 from planes.models import Plan
 from suscripciones.models import Suscripcion, EventoSuscripcion

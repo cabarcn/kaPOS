@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
 from .models import Usuario
-from .serializers import UsuarioSerializer, RegistroSerializer
+from .serializers import backendUsuarioSerializer, RegistroSerializer
 
 
 class RegistroView(generics.CreateAPIView):

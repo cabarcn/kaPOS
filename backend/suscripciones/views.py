@@ -2,7 +2,7 @@ from rest_framework import viewsets, permissions, status
 from .models import Suscripcion, EventoSuscripcion
 from .serializers import SuscripcionSerializer, EventoSuscripcionSerializer
 from rest_framework.permissions import IsAuthenticated
-from usuarios.permissions import IsSoporteOrReadOnly
+from backend.usuarios.permissions import IsSoporteOrReadOnly
 from rest_framework.decorators import action
 from rest_framework.response import Response
 

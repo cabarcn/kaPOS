@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Cliente
-from usuarios.serializers import UsuarioSerializer
+from backend.usuarios.serializers import backendUsuarioSerializer
 
 
 

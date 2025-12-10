@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from .models import Cliente
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
-from usuarios.permissions import IsSoporteOrReadOnly
+from backend.usuarios.permissions import IsSoporteOrReadOnly
 from .serializers import ClienteSerializer, ClienteCreateSerializer
 
 class ClienteViewSet(viewsets.ModelViewSet):
